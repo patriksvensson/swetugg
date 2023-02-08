@@ -37,6 +37,14 @@ public sealed class RickRollSlide : AnimatedSlide
 
         _frame++;
 
-        return Align.Center(canvasImage, VerticalAlignment.Middle);
+        var image = Align.Center(canvasImage, VerticalAlignment.Middle);
+
+        return new Layout()
+            .SplitRows(
+                new Layout(image),
+                new Layout(
+                    Align.Center(
+                        new Markup("✅ [green]Achivement unlocked:[/] Rick-roll audience")))
+                    .Size(1));
     }
 }
