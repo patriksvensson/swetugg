@@ -17,7 +17,10 @@ public sealed class OfflineTriviaConnection : ITriviaConnection
         _questions = new List<TriviaQuestion>();
         _asked = new HashSet<string>();
 
-        var files = Directory.GetFiles("./Data", "*.json");
+        var directory = Path.GetDirectoryName(typeof(TriviaClient).Assembly.Location);
+        directory = Path.Combine(directory, "Data");
+
+        var files = Directory.GetFiles(directory, "*.json");
         foreach (var file in files)
         {
             var json = File.ReadAllText(file);
