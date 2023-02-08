@@ -13,8 +13,9 @@ public sealed class Slideshow : Renderable
     private readonly IClicker _clicker;
     private int _index;
 
-    public Slideshow(IClicker clicker, IEnumerable<Slide> slides)
+    public Slideshow(IClicker clicker, IEnumerable<Slide> slides, int slide = 0)
     {
+        _index = slide;
         _clicker = clicker ?? throw new ArgumentNullException(nameof(clicker));
         _slides = new List<Slide>(slides);
         _layout = new Layout()
@@ -28,13 +29,13 @@ public sealed class Slideshow : Renderable
                 new Layout("Footer").Size(2));
     }
 
-    public static void Run(IEnumerable<Slide> slides)
+    public static void Run(IEnumerable<Slide> slides, int slide)
     {
         try
         {
             AnsiConsole.Cursor.Hide();
             var clicker = new StdinClicker();
-            var presentation = new Slideshow(clicker, slides);
+            var presentation = new Slideshow(clicker, slides, slide);
             presentation.Run();
         }
         finally

@@ -7,7 +7,6 @@ namespace Spectre.Presentation;
 
 public sealed class ColorBox : Renderable
 {
-    private readonly int _height;
     private readonly ColorSystem _system;
 
     public ColorBox(ColorSystem system)
@@ -32,7 +31,7 @@ public sealed class ColorBox : Renderable
             _ => throw new NotSupportedException("Unknown color system"),
         };
 
-        var height = options.Height ?? _height;
+        var height = options.Height;
 
         for (var y = 0; y < height; y++)
         {

@@ -20,12 +20,11 @@ public sealed class AboutSlide : SplitSlide
     {
         yield return new Markup("My name is [yellow]Patrik Svensson[/]");
         yield return new Markup("From [blue]Sweden[/], living outside of [blue]Stockholm[/]");
-        yield return new Markup("Father to [yellow]Ada 👧[/]\nHusband to [yellow]Valentina 👩[/]");
+        yield return new Markup("Father to [yellow]1 👧[/]\nHusband to [yellow]1 👩[/]");
         yield return new Markup("Freelancing [blue]programmer[/]\nCurrently working for a company called [blue]Mitigram[/]");
         yield return new Markup("Creator of [link=https://spectreconsole.net blue]Spectre.Console[/] 👻");
-        yield return new Markup("Creator of the build tool [link=https://cakebuild.net blue]Cake[/] 🍰");
-        yield return new Markup("Microsoft [black on blue]MVP[/]");
-        yield return new Markup("GitHub Star 🌟");
+        yield return new Markup("Creator of [link=https://cakebuild.net blue]Cake[/] 🍰");
+        yield return new Markup("Microsoft [black on blue]MVP[/]\nGitHub Star 🌟");
     }
 
     protected override IRenderable GetRightRenderable()

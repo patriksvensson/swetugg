@@ -20,7 +20,8 @@ public sealed class CoverSlide : Slide
         layout["Top"].Update(
             Align.Center(
                 new Panel(
-                    new Markup("[blue]Spectre[/].[green]Console[/]")),
+                    new Markup("Building [red]b[/][blue]e[/][green]a[/][yellow]u[/][orange1]t[/][red]i[/][green]f[/][blue]u[/][yellow]l[/] terminal applications"))
+                    .RoundedBorder(),
             VerticalAlignment.Bottom));
 
         layout["Bottom"].Update(
